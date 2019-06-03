@@ -59,11 +59,11 @@ for i in range(100):
         best_cond_acc = val_acc[0]
         best_cond_idx = i+1
         torch.save(model_sqlnet_cond.cond_pred.state_dict(),
-                        'saved_model/epoch%d.cond_model%s'%(i+1,cond_m))
+                        'epoch%d.cond_model%s'%(i+1,cond_m))
         torch.save(model_sqlnet_cond.cond_pred.state_dict(), cond_m)
                     
         torch.save(model_sqlnet_cond.cond_embed_layer.state_dict(),
-                        'saved_model/epoch%d.cond_embed%s'%(i+1,cond_e))
+                        'epoch%d.cond_embed%s'%(i+1,cond_e))
         torch.save(model_sqlnet_cond.cond_embed_layer.state_dict(), cond_e)
             
     print (' Best val acc = %s, on epoch %s individually'%(
