@@ -20,7 +20,7 @@ sql_data, table_data, val_sql_data, val_table_data,\
         test_sql_data, test_table_data, TRAIN_DB, DEV_DB, TEST_DB = \
         load_dataset(0, use_small=USE_SMALL)
         
-word_emb = load_word_emb('data/glove.%dB.%dd.txt'%(B_word,N_word),
+word_emb = load_word_emb('glove/glove.%dB.%dd.txt'%(B_word,N_word),
         use_small=USE_SMALL)
 
 print ("Length of word vocabulary: %d"%len(word_emb))

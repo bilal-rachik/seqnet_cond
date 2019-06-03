@@ -37,12 +37,12 @@ def load_data(sql_paths, table_paths, use_small=False):
 def load_dataset(dataset_id, use_small=False):
     if dataset_id == 0:
         print ("Loading from original dataset")
-        sql_data,table_data = load_data('data/train_tok.jsonl',
-                'data/train_tok.tables.jsonl',use_small=use_small)
-        val_sql_data, val_table_data = load_data('data/dev_tok.jsonl',
-                'data/dev_tok.tables.jsonl', use_small=use_small)
-        test_sql_data, test_table_data = load_data('data/test_tok.jsonl',
-                'data/test_tok.tables.jsonl', use_small=use_small)
+        sql_data,table_data = load_data('data/data/train_tok.jsonl',
+                'data/data/train_tok.tables.jsonl',use_small=use_small)
+        val_sql_data, val_table_data = load_data('data/data/dev_tok.jsonl',
+                'data/data/dev_tok.tables.jsonl', use_small=use_small)
+        test_sql_data, test_table_data = load_data('data/data/test_tok.jsonl',
+                'data/data/test_tok.tables.jsonl', use_small=use_small)
         TRAIN_DB = 'data/train.db'
         DEV_DB = 'data/dev.db'
         TEST_DB = 'data/test.db'

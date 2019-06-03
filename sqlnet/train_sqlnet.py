@@ -20,7 +20,7 @@ sql_data, table_data, val_sql_data, val_table_data,\
         test_sql_data, test_table_data, TRAIN_DB, DEV_DB, TEST_DB = \
         load_dataset(0, use_small=USE_SMALL)
             
-word_emb = load_word_emb('data/glove.42B.300d.txt', \
+word_emb = load_word_emb('glove/glove.42B.300d.txt', \
             load_used=True, use_small=USE_SMALL)
 
 model_sqlnet_cond= SQLNet_cond(word_emb, N_word=N_word, use_ca=True,
