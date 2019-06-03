@@ -33,11 +33,8 @@ model.cond_pred.load_state_dict(torch.load(cond_m))
 print ("Loading from %s"%cond_e)
 model.cond_embed_layer.load_state_dict(torch.load(cond_e))
 
-print ("Dev acc_qm: %s;\n  breakdown on (where): %s"%epoch_acc(
+print ("Dev acc_qm: %s;\n  breakdown on (where): %s"%epoch_acc_sqlnet(
             model, BATCH_SIZE, val_sql_data, val_table_data))
-#print "Dev execution acc: %s"%epoch_exec_acc(
-#           model, BATCH_SIZE, val_sql_data, val_table_data, DEV_DB)
-print ("Test acc_qm: %s;\n  breakdown on (agg, sel, where): %s"%epoch_acc(
+
+print ("Test acc_qm: %s;\n  breakdown on (agg, sel, where): %s"%epoch_acc_sqlnet(
             model, BATCH_SIZE, test_sql_data, test_table_data)
-#print "Test execution acc: %s"%epoch_exec_acc(
- #           model, BATCH_SIZE, test_sql_data, test_table_data, TEST_DB)
