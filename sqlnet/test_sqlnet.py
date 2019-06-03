@@ -37,4 +37,4 @@ print ("Dev acc_qm: %s;\n  breakdown on (where): %s"%epoch_acc_sqlnet(
             model, BATCH_SIZE, val_sql_data, val_table_data))
 
 print ("Test acc_qm: %s;\n  breakdown on (agg, sel, where): %s"%epoch_acc_sqlnet(
-            model, BATCH_SIZE, test_sql_data, test_table_data)
+            model, BATCH_SIZE, test_sql_data, test_table_data))
