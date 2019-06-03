@@ -2,8 +2,6 @@
 import json
 import torch
 from sqlnet.utils_sqlnet import *
-
-
 from sqlnet.model.sqlnet_cond import SQLNet_cond
 import numpy as np
 import datetime
@@ -57,16 +55,15 @@ for i in range(100):
             BATCH_SIZE, val_sql_data, val_table_data)
     print (' Dev acc_qm: %s\n   breakdown result: %s'%val_acc)
    
-
     if val_acc[0]> best_cond_acc:
         best_cond_acc = val_acc[0]
         best_cond_idx = i+1
-        #torch.save(model_sqlnet_cond.cond_pred.state_dict(),
-         #               'saved_model/epoch%d.cond_model%s'%(i+1,cond_m))
+        torch.save(model_sqlnet_cond.cond_pred.state_dict(),
+                        'saved_model/epoch%d.cond_model%s'%(i+1,cond_m))
         torch.save(model_sqlnet_cond.cond_pred.state_dict(), cond_m)
                     
-        #torch.save(model_sqlnet_cond.cond_embed_layer.state_dict(),
-         #               'saved_model/epoch%d.cond_embed%s'%(i+1,cond_e))
+        torch.save(model_sqlnet_cond.cond_embed_layer.state_dict(),
+                        'saved_model/epoch%d.cond_embed%s'%(i+1,cond_e))
         torch.save(model_sqlnet_cond.cond_embed_layer.state_dict(), cond_e)
             
     print (' Best val acc = %s, on epoch %s individually'%(
