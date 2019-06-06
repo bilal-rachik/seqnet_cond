@@ -28,7 +28,7 @@ model_sqlnet_cond= SQLNet_cond(word_emb, N_word=N_word, use_ca=True,
 
 
 cond_e_1="epoch64.cond_embedsqlnet_emb_cond"
-cond_m_1="epoch64.cond_modelsqlnet_cond
+cond_m_1="epoch64.cond_modelsqlnet_cond"
 
 cond_e="sqlnet_emb_cond"
 cond_m="sqlnet_cond"
