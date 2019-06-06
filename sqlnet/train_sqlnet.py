@@ -54,7 +54,7 @@ print ('Init dev acc_qm: %s\n  breakdown on (where): %s'%\
                 init_acc)
 torch.save(model_sqlnet_cond.cond_pred.state_dict(), cond_e)
            
-for i in range(57,100):
+for i in range(64,100):
     print ('Epoch %d @ %s'%(i+1, datetime.datetime.now()))
     print (' Loss = %s'%epoch_train_sqlnet(
             model_sqlnet_cond,optimizer, BATCH_SIZE, 
