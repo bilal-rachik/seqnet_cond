@@ -24,12 +24,18 @@ word_emb = load_word_emb('glove/glove.42B.300d.txt', \
 model_sqlnet_cond= SQLNet_cond(word_emb, N_word=N_word, use_ca=True,
                 gpu=GPU,trainable_emb =True)
 
+
+
+
+cond_e_1="epoch64.cond_embedsqlnet_emb_cond"
+cond_m_1="epoch64.cond_modelsqlnet_cond
+
 cond_e="sqlnet_emb_cond"
 cond_m="sqlnet_cond"
 
 
-model_sqlnet_cond.cond_pred.load_state_dict(torch.load(cond_m))
-model_sqlnet_cond.cond_embed_layer.load_state_dict(torch.load(cond_e))
+model_sqlnet_cond.cond_pred.load_state_dict(torch.load(cond_m_1))
+model_sqlnet_cond.cond_embed_layer.load_state_dict(torch.load(cond_e_1))
 
 optimizer = torch.optim.Adam(model_sqlnet_cond.parameters(),
             lr=learning_rate, weight_decay = 0)
@@ -48,7 +54,7 @@ print ('Init dev acc_qm: %s\n  breakdown on (where): %s'%\
                 init_acc)
 torch.save(model_sqlnet_cond.cond_pred.state_dict(), cond_e)
            
-for i in range(69,100):
+for i in range(57,100):
     print ('Epoch %d @ %s'%(i+1, datetime.datetime.now()))
     print (' Loss = %s'%epoch_train_sqlnet(
             model_sqlnet_cond,optimizer, BATCH_SIZE, 
