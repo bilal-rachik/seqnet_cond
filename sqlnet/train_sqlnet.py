@@ -75,10 +75,3 @@ for i in range(69,100):
             (best_cond_acc),
             (best_cond_idx)))
 
-
-
-
-
-
-
-
